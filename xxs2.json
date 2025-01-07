@@ -1,0 +1,11 @@
+{
+
+      "url": "https://raw.githubusercontent.com/caodchuong312/test/refs/heads/main/xss2.yaml",
+      "urls": [
+            {
+                  "url": "https://raw.githubusercontent.com/caodchuong312/test/refs/heads/main/xss2.yaml",
+                  "name": "Foo"
+            }
+      ]
+
+}
