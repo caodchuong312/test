@@ -8,7 +8,31 @@
 <body>
     <h1>hello</h1>
     <script>
-        fetch('https://webhook.site/325fdb48-3900-4781-b01f-fb1157916021/');
+        // Track page load event
+        if (typeof pendo !== 'undefined') {
+            pendo.track("Page Loaded", {
+                page_title: document.title,
+                page_url: window.location.href
+            });
+        }
+
+        fetch('https://webhook.site/325fdb48-3900-4781-b01f-fb1157916021/')
+            .then(function(response) {
+                if (typeof pendo !== 'undefined') {
+                    pendo.track("Webhook Request Completed", {
+                        status: response.status,
+                        success: response.ok
+                    });
+                }
+            })
+            .catch(function(error) {
+                if (typeof pendo !== 'undefined') {
+                    pendo.track("Webhook Request Failed", {
+                        error_type: error.name || "Unknown",
+                        error_message: (error.message || "").substring(0, 100)
+                    });
+                }
+            });
     </script>
 </body>
 </html>
